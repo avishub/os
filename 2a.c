@@ -33,11 +33,12 @@ int main()
   case 0:
 		printf("\nChild process.");
 		asc(arr, size);
-		break;
+		exit(0);
   default:
  		wait(NULL);
 		printf("\nParent process.");
 		desc(arr, size);
+		exit(0);
   }
   return 0;
 }
