@@ -5,8 +5,7 @@
 sem_t room;
 sem_t forks[5];
 
-void * philosopher(void *pid)
-{
+void * philosopher(void *pid){
 	int t = *(int *)pid;
 
 	while(1) {
@@ -21,7 +20,7 @@ void * philosopher(void *pid)
 		sem_post(&forks[(t+1)%5]);
 		sem_post(&forks[t]);
 		sem_post(&room);
-		printf("\nPhilosopher %d is put down the forks...", t);
+		printf("\nPhilosopher %d is leaving...", t);
 	}
 	pthread_exit(NULL);
 }
